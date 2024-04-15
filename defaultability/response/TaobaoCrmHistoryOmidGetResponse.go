@@ -1,23 +1,23 @@
 package response
 
 import (
-    "topsdk/defaultability/domain"
+	"github.com/xingwy/topsdk/defaultability/domain"
 )
 
 type TaobaoCrmHistoryOmidGetResponse struct {
 
-    /*
-        System request id
-    */
-    RequestId string `json:"request_id,omitempty" `
+	/*
+	   System request id
+	*/
+	RequestId string `json:"request_id,omitempty" `
 
-    /*
-        System body
-    */
-    Body string
+	/*
+	   System body
+	*/
+	Body string
 
-    /*
-        结果
-    */
-    Data  domain.TaobaoCrmHistoryOmidGetCrmPrivacyResponse `json:"data,omitempty" `
+	/*
+	   结果
+	*/
+	Data domain.TaobaoCrmHistoryOmidGetCrmPrivacyResponse `json:"data,omitempty" `
 }

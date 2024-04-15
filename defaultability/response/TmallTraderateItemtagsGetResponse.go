@@ -1,23 +1,23 @@
 package response
 
 import (
-    "topsdk/defaultability/domain"
+	"github.com/xingwy/topsdk/defaultability/domain"
 )
 
 type TmallTraderateItemtagsGetResponse struct {
 
-    /*
-        System request id
-    */
-    RequestId string `json:"request_id,omitempty" `
+	/*
+	   System request id
+	*/
+	RequestId string `json:"request_id,omitempty" `
 
-    /*
-        System body
-    */
-    Body string
+	/*
+	   System body
+	*/
+	Body string
 
-    /*
-        标签列表
-    */
-    Tags  []domain.TmallTraderateItemtagsGetTmallRateTagDetail `json:"tags,omitempty" `
+	/*
+	   标签列表
+	*/
+	Tags []domain.TmallTraderateItemtagsGetTmallRateTagDetail `json:"tags,omitempty" `
 }

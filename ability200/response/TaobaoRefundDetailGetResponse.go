@@ -1,23 +1,23 @@
 package response
 
 import (
-    "topsdk/ability200/domain"
+	"github.com/xingwy/topsdk/ability200/domain"
 )
 
 type TaobaoRefundDetailGetResponse struct {
 
-    /*
-        System request id
-    */
-    RequestId string `json:"request_id,omitempty" `
+	/*
+	   System request id
+	*/
+	RequestId string `json:"request_id,omitempty" `
 
-    /*
-        System body
-    */
-    Body string
+	/*
+	   System body
+	*/
+	Body string
 
-    /*
-        退款详情
-    */
-    Detail  domain.TaobaoRefundDetailGetRefundDetail `json:"detail,omitempty" `
+	/*
+	   退款详情
+	*/
+	Detail domain.TaobaoRefundDetailGetRefundDetail `json:"detail,omitempty" `
 }
