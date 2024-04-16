@@ -1757,3 +1757,23 @@ func (ability *Defaultability) TaobaoTmcUserPermit(req *request.TaobaoTmcUserPer
 	}
 	return &respStruct, err
 }
+
+/*
+获取淘宝系统事件
+*/
+func (ability *Defaultability) TimeGet(req *request.TimeGetRequest) (*response.TimeGetResponse, error) {
+	if ability.Client == nil {
+		return nil, errors.New("Defaultability topClient is nil")
+	}
+	var jsonStr, err = ability.Client.Execute("taobao.time.get", req.ToMap(), req.ToFileMap())
+	var respStruct = response.TimeGetResponse{}
+	if err != nil {
+		log.Println("TimeGet error", err)
+		return &respStruct, err
+	}
+	err = util.HandleJsonResponse(jsonStr, &respStruct)
+	if respStruct.Body == "" || len(respStruct.Body) == 0 {
+		respStruct.Body = jsonStr
+	}
+	return &respStruct, err
+}
