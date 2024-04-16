@@ -7,11 +7,11 @@ import (
 type TaobaoTraderatesGetResults struct {
 	/*
 	   交易ID     */
-	Tid *int64 `json:"tid,omitempty" `
+	Tid *string `json:"tid,omitempty" `
 
 	/*
 	   子订单ID     */
-	Oid *int64 `json:"oid,omitempty" `
+	Oid *string `json:"oid,omitempty" `
 
 	/*
 	   评价者角色.可选值:seller(卖家),buyer(买家)     */
@@ -67,11 +67,11 @@ type TaobaoTraderatesGetResults struct {
 	Ouid *string `json:"ouid,omitempty" `
 }
 
-func (s *TaobaoTraderatesGetResults) SetTid(v int64) *TaobaoTraderatesGetResults {
+func (s *TaobaoTraderatesGetResults) SetTid(v string) *TaobaoTraderatesGetResults {
 	s.Tid = &v
 	return s
 }
-func (s *TaobaoTraderatesGetResults) SetOid(v int64) *TaobaoTraderatesGetResults {
+func (s *TaobaoTraderatesGetResults) SetOid(v string) *TaobaoTraderatesGetResults {
 	s.Oid = &v
 	return s
 }

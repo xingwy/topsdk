@@ -11,7 +11,7 @@ type TaobaoRefundsApplyGetRefund struct {
 
 	/*
 	   淘宝交易单号     */
-	Tid *int64 `json:"tid,omitempty" `
+	Tid *string `json:"tid,omitempty" `
 
 	/*
 	   卖家昵称     */
@@ -50,7 +50,7 @@ func (s *TaobaoRefundsApplyGetRefund) SetRefundId(v string) *TaobaoRefundsApplyG
 	s.RefundId = &v
 	return s
 }
-func (s *TaobaoRefundsApplyGetRefund) SetTid(v int64) *TaobaoRefundsApplyGetRefund {
+func (s *TaobaoRefundsApplyGetRefund) SetTid(v string) *TaobaoRefundsApplyGetRefund {
 	s.Tid = &v
 	return s
 }
