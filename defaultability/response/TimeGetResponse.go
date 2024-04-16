@@ -1,7 +1,5 @@
 package response
 
-import "time"
-
 type TimeGetResponse struct {
 
 	/*
@@ -17,5 +15,5 @@ type TimeGetResponse struct {
 	/*
 	   是否成功
 	*/
-	Time time.Time `json:"time,omitempty" `
+	Time string `json:"time,omitempty" `
 }
