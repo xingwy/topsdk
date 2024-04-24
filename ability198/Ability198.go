@@ -2,7 +2,6 @@ package ability198
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability198/request"
@@ -28,7 +27,6 @@ func (ability *Ability198) AlibabaAscpLogisticsIdentcodeQuery(req *request.Aliba
 	var jsonStr, err = ability.Client.ExecuteWithSession("alibaba.ascp.logistics.identcode.query", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.AlibabaAscpLogisticsIdentcodeQueryResponse{}
 	if err != nil {
-		log.Println("alibabaAscpLogisticsIdentcodeQuery error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability198) AlibabaAscpLogisticsIdentcodeUpload(req *request.Alib
 	var jsonStr, err = ability.Client.ExecuteWithSession("alibaba.ascp.logistics.identcode.upload", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.AlibabaAscpLogisticsIdentcodeUploadResponse{}
 	if err != nil {
-		log.Println("alibabaAscpLogisticsIdentcodeUpload error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -68,7 +65,6 @@ func (ability *Ability198) AlibabaAscpLogisticsCpGet(req *request.AlibabaAscpLog
 	var jsonStr, err = ability.Client.Execute("alibaba.ascp.logistics.cp.get", req.ToMap(), req.ToFileMap())
 	var respStruct = response.AlibabaAscpLogisticsCpGetResponse{}
 	if err != nil {
-		log.Println("alibabaAscpLogisticsCpGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -88,7 +84,6 @@ func (ability *Ability198) AlibabaAscpLogisticsSellerWritelogisticsnode(req *req
 	var jsonStr, err = ability.Client.ExecuteWithSession("alibaba.ascp.logistics.seller.writelogisticsnode", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.AlibabaAscpLogisticsSellerWritelogisticsnodeResponse{}
 	if err != nil {
-		log.Println("alibabaAscpLogisticsSellerWritelogisticsnode error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

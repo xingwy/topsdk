@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	"log"
 	"mime/multipart"
 	"net"
 	"net/http"
@@ -103,7 +102,7 @@ func (client *TopClient) ExecuteWithSession(method string, data map[string]inter
 	serverUrl.RawQuery = urlValues.Encode()
 	urlPath := serverUrl.String()
 	// 构建body
-	if fileData != nil && len(fileData) > 0 {
+	if len(fileData) > 0 {
 		return doPostWithFile(urlPath, data, fileData, client.httpClient)
 	} else {
 		return doPost(urlPath, data, client.httpClient)
@@ -121,12 +120,10 @@ func doPost(urlPath string, data map[string]interface{}, httpClient *http.Client
 		defer resp.Body.Close()
 	}
 	if err != nil {
-		log.Println("http.PostForm error", err)
 		return "", err
 	}
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		log.Println("ioutil.ReadAll", err)
 		return "", err
 	}
 	return string(body), nil
@@ -174,13 +171,11 @@ func doPostWithFile(urlPath string, data map[string]interface{}, fileData map[st
 
 	resp, err := httpClient.Post(urlPath, writer.FormDataContentType(), bodyBuf)
 	if err != nil {
-		log.Println("http.PostForm error", err)
 		return "", err
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		log.Println("ioutil.ReadAll", err)
 		return "", err
 	}
 	return string(body), nil
@@ -188,4 +183,21 @@ func doPostWithFile(urlPath string, data map[string]interface{}, fileData map[st
 
 func (client *TopClient) Execute(method string, data map[string]interface{}, fileData map[string]interface{}) (string, error) {
 	return client.ExecuteWithSession(method, data, fileData, "")
+}
+
+func (client *TopClient) Send(appKey, appSecret, method string, params map[string]any, fileData map[string]interface{}, sessionID string) (map[string]any, error) {
+	var v map[string]any = make(map[string]any)
+
+	jsonStr, err := client.ExecuteWithSession(method, params, fileData, sessionID)
+	if err != nil {
+		return nil, err
+	}
+
+	// 根据method拿类型
+	err = util.HandleJsonResponse(jsonStr, &v)
+	if err != nil {
+		return nil, err
+	}
+
+	return v, err
 }

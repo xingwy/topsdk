@@ -2,7 +2,6 @@ package ability206
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability206/request"
@@ -28,7 +27,6 @@ func (ability *Ability206) TaobaoJdsHluserUpdate(req *request.TaobaoJdsHluserUpd
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.jds.hluser.update", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoJdsHluserUpdateResponse{}
 	if err != nil {
-		log.Println("taobaoJdsHluserUpdate error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability206) TaobaoJdsHluserGet(req *request.TaobaoJdsHluserGetReq
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.jds.hluser.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoJdsHluserGetResponse{}
 	if err != nil {
-		log.Println("taobaoJdsHluserGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -68,7 +65,6 @@ func (ability *Ability206) TaobaoJdsRefundTracesGet(req *request.TaobaoJdsRefund
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.jds.refund.traces.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoJdsRefundTracesGetResponse{}
 	if err != nil {
-		log.Println("taobaoJdsRefundTracesGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -88,7 +84,6 @@ func (ability *Ability206) TaobaoJdsTradesStatisticsDiff(req *request.TaobaoJdsT
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.jds.trades.statistics.diff", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoJdsTradesStatisticsDiffResponse{}
 	if err != nil {
-		log.Println("taobaoJdsTradesStatisticsDiff error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -108,7 +103,6 @@ func (ability *Ability206) TaobaoJdsTradesStatisticsGet(req *request.TaobaoJdsTr
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.jds.trades.statistics.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoJdsTradesStatisticsGetResponse{}
 	if err != nil {
-		log.Println("taobaoJdsTradesStatisticsGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -128,7 +122,6 @@ func (ability *Ability206) TaobaoOcTradetagAttach(req *request.TaobaoOcTradetagA
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.oc.tradetag.attach", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoOcTradetagAttachResponse{}
 	if err != nil {
-		log.Println("taobaoOcTradetagAttach error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -148,7 +141,6 @@ func (ability *Ability206) TaobaoOcTradesBytagGet(req *request.TaobaoOcTradesByt
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.oc.trades.bytag.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoOcTradesBytagGetResponse{}
 	if err != nil {
-		log.Println("taobaoOcTradesBytagGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -168,7 +160,6 @@ func (ability *Ability206) TaobaoOcTradetagsGet(req *request.TaobaoOcTradetagsGe
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.oc.tradetags.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoOcTradetagsGetResponse{}
 	if err != nil {
-		log.Println("taobaoOcTradetagsGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

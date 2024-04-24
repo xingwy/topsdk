@@ -2,7 +2,6 @@ package ability181
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability181/request"
@@ -28,7 +27,6 @@ func (ability *Ability181) TaobaoSkuUpdateListingTmall(req *request.TaobaoSkuUpd
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.sku.update.listing.tmall", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoSkuUpdateListingTmallResponse{}
 	if err != nil {
-		log.Println("taobaoSkuUpdateListingTmall error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability181) TaobaoItemCatpropsModificationGet(req *request.Taobao
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.item.catprops.modification.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoItemCatpropsModificationGetResponse{}
 	if err != nil {
-		log.Println("taobaoItemCatpropsModificationGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

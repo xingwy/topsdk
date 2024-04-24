@@ -2,7 +2,6 @@ package ability803
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability803/request"
@@ -28,7 +27,6 @@ func (ability *Ability803) TaobaoWirelessBuntingShopShorturlCreate(req *request.
 	var jsonStr, err = ability.Client.Execute("taobao.wireless.bunting.shop.shorturl.create", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoWirelessBuntingShopShorturlCreateResponse{}
 	if err != nil {
-		log.Println("taobaoWirelessBuntingShopShorturlCreate error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

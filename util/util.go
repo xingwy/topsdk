@@ -40,12 +40,12 @@ func (t LocalTime) String() string {
 	return time.Time(t).Format(TimeFormat)
 }
 
-func UnmarshalJSON(data []byte,v interface{})(err error){
+func UnmarshalJSON(data []byte, v interface{}) (err error) {
 	return json.Unmarshal(data, v)
 }
 
 func ConvertStructList(data interface{}) string {
-	if(data == nil) {
+	if data == nil {
 		return "[]"
 	}
 	jsonStr, _ := json.Marshal(data)
@@ -53,7 +53,7 @@ func ConvertStructList(data interface{}) string {
 }
 
 func ConvertStruct(data interface{}) string {
-	if(data == nil) {
+	if data == nil {
 		return "{}"
 	}
 	jsonStr, _ := json.Marshal(data)
@@ -61,17 +61,17 @@ func ConvertStruct(data interface{}) string {
 }
 
 func ConvertBasicList(data interface{}) string {
-	if(data == nil) {
+	if data == nil {
 		return "[]"
 	}
 	return strings.Replace(strings.Trim(fmt.Sprint(data), "[]"), " ", ",", -1)
 }
 
-func HandleJsonResponse(jsonStr string,v interface{})(err error) {
+func HandleJsonResponse(jsonStr string, v interface{}) (err error) {
 
-	if(strings.Contains(jsonStr[0:20],"error_response")){
+	if strings.Contains(jsonStr[0:20], "error_response") {
 		err := &TopApiRequestError{}
-		jsonStr = jsonStr[18:len(jsonStr)-1]
+		jsonStr = jsonStr[18 : len(jsonStr)-1]
 		err2 := json.Unmarshal([]byte(jsonStr), err)
 		if err2 != nil {
 			return err2
@@ -81,12 +81,12 @@ func HandleJsonResponse(jsonStr string,v interface{})(err error) {
 	return json.Unmarshal([]byte(jsonStr), v)
 }
 
-func GetSign(publicParam map[string]interface{},data map[string]interface{},secret string) string {
+func GetSign(publicParam map[string]interface{}, data map[string]interface{}, secret string) string {
 	var allParamMap = make(map[string]interface{})
-	for k,v := range data {
+	for k, v := range data {
 		allParamMap[k] = v
 	}
-	for k,v := range publicParam {
+	for k, v := range publicParam {
 		allParamMap[k] = v
 	}
 	var keyList []string
@@ -95,18 +95,13 @@ func GetSign(publicParam map[string]interface{},data map[string]interface{},secr
 	}
 	sort.Strings(keyList)
 	var signStr = ""
-	for _ , key := range keyList {
+	for _, key := range keyList {
 		value := allParamMap[key]
 		signStr = signStr + fmt.Sprintf("%v%v", key, value)
-		//if(value != ""){
-		//	signStr = signStr + fmt.Sprintf("%v%v", key, value)
-		//}
 	}
-	fmt.Println(signStr)
-	sign := strings.ToUpper(HmacSha256(signStr,secret))
+	sign := strings.ToUpper(HmacSha256(signStr, secret))
 	return sign
 }
-
 
 func HmacSha256(data string, secret string) string {
 	h := hmac.New(sha256.New, []byte(secret))

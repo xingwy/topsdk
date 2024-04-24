@@ -2,7 +2,6 @@ package ability312
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability312/request"
@@ -28,7 +27,6 @@ func (ability *Ability312) AlibabaAliqinTaNumberSinglecallbyvoice(req *request.A
 	var jsonStr, err = ability.Client.Execute("alibaba.aliqin.ta.number.singlecallbyvoice", req.ToMap(), req.ToFileMap())
 	var respStruct = response.AlibabaAliqinTaNumberSinglecallbyvoiceResponse{}
 	if err != nil {
-		log.Println("alibabaAliqinTaNumberSinglecallbyvoice error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability312) AlibabaAliqinTaNumberSinglecallbytts(req *request.Ali
 	var jsonStr, err = ability.Client.Execute("alibaba.aliqin.ta.number.singlecallbytts", req.ToMap(), req.ToFileMap())
 	var respStruct = response.AlibabaAliqinTaNumberSinglecallbyttsResponse{}
 	if err != nil {
-		log.Println("alibabaAliqinTaNumberSinglecallbytts error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -68,7 +65,6 @@ func (ability *Ability312) AlibabaAliqinTaVoiceNumDoublecall(req *request.Alibab
 	var jsonStr, err = ability.Client.Execute("alibaba.aliqin.ta.voice.num.doublecall", req.ToMap(), req.ToFileMap())
 	var respStruct = response.AlibabaAliqinTaVoiceNumDoublecallResponse{}
 	if err != nil {
-		log.Println("alibabaAliqinTaVoiceNumDoublecall error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -88,7 +84,6 @@ func (ability *Ability312) AlibabaAliqinTaSmsNumSend(req *request.AlibabaAliqinT
 	var jsonStr, err = ability.Client.Execute("alibaba.aliqin.ta.sms.num.send", req.ToMap(), req.ToFileMap())
 	var respStruct = response.AlibabaAliqinTaSmsNumSendResponse{}
 	if err != nil {
-		log.Println("alibabaAliqinTaSmsNumSend error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -108,7 +103,6 @@ func (ability *Ability312) AlibabaAliqinTaSmsNumQuery(req *request.AlibabaAliqin
 	var jsonStr, err = ability.Client.Execute("alibaba.aliqin.ta.sms.num.query", req.ToMap(), req.ToFileMap())
 	var respStruct = response.AlibabaAliqinTaSmsNumQueryResponse{}
 	if err != nil {
-		log.Println("alibabaAliqinTaSmsNumQuery error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -128,7 +122,6 @@ func (ability *Ability312) TaobaoJstSmsTemplateReport(req *request.TaobaoJstSmsT
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.jst.sms.template.report", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoJstSmsTemplateReportResponse{}
 	if err != nil {
-		log.Println("taobaoJstSmsTemplateReport error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -148,7 +141,6 @@ func (ability *Ability312) TaobaoJstSmsSignnameReport(req *request.TaobaoJstSmsS
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.jst.sms.signname.report", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoJstSmsSignnameReportResponse{}
 	if err != nil {
-		log.Println("taobaoJstSmsSignnameReport error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -168,7 +160,6 @@ func (ability *Ability312) TaobaoJstSmsMessageDirectBatchsend(req *request.Taoba
 	var jsonStr, err = ability.Client.Execute("taobao.jst.sms.message.direct.batchsend", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoJstSmsMessageDirectBatchsendResponse{}
 	if err != nil {
-		log.Println("taobaoJstSmsMessageDirectBatchsend error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

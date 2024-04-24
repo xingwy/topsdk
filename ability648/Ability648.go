@@ -2,7 +2,6 @@ package ability648
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability648/request"
@@ -28,7 +27,6 @@ func (ability *Ability648) TaobaoPromotionLimitdiscountDetailGet(req *request.Ta
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.promotion.limitdiscount.detail.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoPromotionLimitdiscountDetailGetResponse{}
 	if err != nil {
-		log.Println("taobaoPromotionLimitdiscountDetailGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability648) TaobaoMarketingPromotionKfc(req *request.TaobaoMarket
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.marketing.promotion.kfc", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoMarketingPromotionKfcResponse{}
 	if err != nil {
-		log.Println("taobaoMarketingPromotionKfc error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -68,7 +65,6 @@ func (ability *Ability648) TaobaoTradeMemoAdd(req *request.TaobaoTradeMemoAddReq
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.trade.memo.add", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoTradeMemoAddResponse{}
 	if err != nil {
-		log.Println("taobaoTradeMemoAdd error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -88,7 +84,6 @@ func (ability *Ability648) TaobaoTradeMemoUpdate(req *request.TaobaoTradeMemoUpd
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.trade.memo.update", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoTradeMemoUpdateResponse{}
 	if err != nil {
-		log.Println("taobaoTradeMemoUpdate error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -108,7 +103,6 @@ func (ability *Ability648) TaobaoTraderatesGet(req *request.TaobaoTraderatesGetR
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.traderates.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoTraderatesGetResponse{}
 	if err != nil {
-		log.Println("taobaoTraderatesGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -128,7 +122,6 @@ func (ability *Ability648) TaobaoTradePostageUpdate(req *request.TaobaoTradePost
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.trade.postage.update", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoTradePostageUpdateResponse{}
 	if err != nil {
-		log.Println("taobaoTradePostageUpdate error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -148,7 +141,6 @@ func (ability *Ability648) TaobaoDeliveryTemplateGet(req *request.TaobaoDelivery
 	var jsonStr, err = ability.Client.Execute("taobao.delivery.template.get", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoDeliveryTemplateGetResponse{}
 	if err != nil {
-		log.Println("taobaoDeliveryTemplateGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -168,7 +160,6 @@ func (ability *Ability648) TaobaoDeliveryTemplatesGet(req *request.TaobaoDeliver
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.delivery.templates.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoDeliveryTemplatesGetResponse{}
 	if err != nil {
-		log.Println("taobaoDeliveryTemplatesGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -188,7 +179,6 @@ func (ability *Ability648) TaobaoDeliveryTemplateDelete(req *request.TaobaoDeliv
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.delivery.template.delete", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoDeliveryTemplateDeleteResponse{}
 	if err != nil {
-		log.Println("taobaoDeliveryTemplateDelete error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -208,7 +198,6 @@ func (ability *Ability648) TaobaoDeliveryTemplateAdd(req *request.TaobaoDelivery
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.delivery.template.add", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoDeliveryTemplateAddResponse{}
 	if err != nil {
-		log.Println("taobaoDeliveryTemplateAdd error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -228,7 +217,6 @@ func (ability *Ability648) TaobaoDeliveryTemplateUpdate(req *request.TaobaoDeliv
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.delivery.template.update", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoDeliveryTemplateUpdateResponse{}
 	if err != nil {
-		log.Println("taobaoDeliveryTemplateUpdate error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -248,7 +236,6 @@ func (ability *Ability648) TaobaoTradeOrderskuUpdate(req *request.TaobaoTradeOrd
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.trade.ordersku.update", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoTradeOrderskuUpdateResponse{}
 	if err != nil {
-		log.Println("taobaoTradeOrderskuUpdate error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -268,7 +255,6 @@ func (ability *Ability648) TaobaoTradeShippingaddressUpdate(req *request.TaobaoT
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.trade.shippingaddress.update", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoTradeShippingaddressUpdateResponse{}
 	if err != nil {
-		log.Println("taobaoTradeShippingaddressUpdate error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -288,7 +274,6 @@ func (ability *Ability648) TaobaoTradeReceivetimeDelay(req *request.TaobaoTradeR
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.trade.receivetime.delay", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoTradeReceivetimeDelayResponse{}
 	if err != nil {
-		log.Println("taobaoTradeReceivetimeDelay error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -308,7 +293,6 @@ func (ability *Ability648) TaobaoLogisticsOnlineCancel(req *request.TaobaoLogist
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.logistics.online.cancel", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoLogisticsOnlineCancelResponse{}
 	if err != nil {
-		log.Println("taobaoLogisticsOnlineCancel error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -328,7 +312,6 @@ func (ability *Ability648) TaobaoLogisticsDummySend(req *request.TaobaoLogistics
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.logistics.dummy.send", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoLogisticsDummySendResponse{}
 	if err != nil {
-		log.Println("taobaoLogisticsDummySend error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

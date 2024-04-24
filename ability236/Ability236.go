@@ -2,7 +2,6 @@ package ability236
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability236/request"
@@ -28,7 +27,6 @@ func (ability *Ability236) TaobaoUopTobOrderCreate(req *request.TaobaoUopTobOrde
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.uop.tob.order.create", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoUopTobOrderCreateResponse{}
 	if err != nil {
-		log.Println("taobaoUopTobOrderCreate error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability236) CainiaoWaybillprintClientupdateGetconfig(req *request
 	var jsonStr, err = ability.Client.Execute("cainiao.waybillprint.clientupdate.getconfig", req.ToMap(), req.ToFileMap())
 	var respStruct = response.CainiaoWaybillprintClientupdateGetconfigResponse{}
 	if err != nil {
-		log.Println("cainiaoWaybillprintClientupdateGetconfig error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -68,7 +65,6 @@ func (ability *Ability236) CainiaoCloudprintCustomareaUpdate(req *request.Cainia
 	var jsonStr, err = ability.Client.ExecuteWithSession("cainiao.cloudprint.customarea.update", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.CainiaoCloudprintCustomareaUpdateResponse{}
 	if err != nil {
-		log.Println("cainiaoCloudprintCustomareaUpdate error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -88,7 +84,6 @@ func (ability *Ability236) CainiaoMerchantInventoryAdjust(req *request.CainiaoMe
 	var jsonStr, err = ability.Client.ExecuteWithSession("cainiao.merchant.inventory.adjust", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.CainiaoMerchantInventoryAdjustResponse{}
 	if err != nil {
-		log.Println("cainiaoMerchantInventoryAdjust error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -108,7 +103,6 @@ func (ability *Ability236) TaobaoLogisticsExpressModifyAppoint(req *request.Taob
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.logistics.express.modify.appoint", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoLogisticsExpressModifyAppointResponse{}
 	if err != nil {
-		log.Println("taobaoLogisticsExpressModifyAppoint error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

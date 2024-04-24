@@ -2,7 +2,6 @@ package ability313
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability313/request"
@@ -28,7 +27,6 @@ func (ability *Ability313) TaobaoJushitaJmsTopicsGet(req *request.TaobaoJushitaJ
 	var jsonStr, err = ability.Client.Execute("taobao.jushita.jms.topics.get", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoJushitaJmsTopicsGetResponse{}
 	if err != nil {
-		log.Println("taobaoJushitaJmsTopicsGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability313) TaobaoJushitaJmsUserGet(req *request.TaobaoJushitaJms
 	var jsonStr, err = ability.Client.Execute("taobao.jushita.jms.user.get", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoJushitaJmsUserGetResponse{}
 	if err != nil {
-		log.Println("taobaoJushitaJmsUserGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

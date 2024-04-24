@@ -2,7 +2,6 @@ package ability200
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability200/request"
@@ -28,7 +27,6 @@ func (ability *Ability200) TaobaoRpRefundIntercept(req *request.TaobaoRpRefundIn
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.rp.refund.intercept", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoRpRefundInterceptResponse{}
 	if err != nil {
-		log.Println("taobaoRpRefundIntercept error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability200) TaobaoRefundNegotiatereturn(req *request.TaobaoRefund
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.refund.negotiatereturn", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoRefundNegotiatereturnResponse{}
 	if err != nil {
-		log.Println("taobaoRefundNegotiatereturn error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -68,7 +65,6 @@ func (ability *Ability200) TaobaoRefundNegotiatereturnRender(req *request.Taobao
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.refund.negotiatereturn.render", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoRefundNegotiatereturnRenderResponse{}
 	if err != nil {
-		log.Println("taobaoRefundNegotiatereturnRender error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -88,7 +84,6 @@ func (ability *Ability200) TaobaoRefundDetailGet(req *request.TaobaoRefundDetail
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.refund.detail.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoRefundDetailGetResponse{}
 	if err != nil {
-		log.Println("taobaoRefundDetailGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -108,7 +103,6 @@ func (ability *Ability200) TaobaoRefundStatusGet(req *request.TaobaoRefundStatus
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.refund.status.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoRefundStatusGetResponse{}
 	if err != nil {
-		log.Println("taobaoRefundStatusGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

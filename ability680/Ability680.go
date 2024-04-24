@@ -2,7 +2,6 @@ package ability680
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability680/request"
@@ -28,7 +27,6 @@ func (ability *Ability680) TaobaoCrmMembersGroupsBatchdeletePrivy(req *request.T
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.crm.members.groups.batchdelete.privy", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoCrmMembersGroupsBatchdeletePrivyResponse{}
 	if err != nil {
-		log.Println("taobaoCrmMembersGroupsBatchdeletePrivy error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability680) TaobaoCrmMembersIncrementGetPrivy(req *request.Taobao
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.crm.members.increment.get.privy", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoCrmMembersIncrementGetPrivyResponse{}
 	if err != nil {
-		log.Println("taobaoCrmMembersIncrementGetPrivy error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -68,7 +65,6 @@ func (ability *Ability680) TaobaoCrmMembersSearchPrivy(req *request.TaobaoCrmMem
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.crm.members.search.privy", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoCrmMembersSearchPrivyResponse{}
 	if err != nil {
-		log.Println("taobaoCrmMembersSearchPrivy error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -88,7 +84,6 @@ func (ability *Ability680) TaobaoCrmMembersGetPrivy(req *request.TaobaoCrmMember
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.crm.members.get.privy", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoCrmMembersGetPrivyResponse{}
 	if err != nil {
-		log.Println("taobaoCrmMembersGetPrivy error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -108,7 +103,6 @@ func (ability *Ability680) TaobaoCrmMemberinfoUpdatePrivy(req *request.TaobaoCrm
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.crm.memberinfo.update.privy", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoCrmMemberinfoUpdatePrivyResponse{}
 	if err != nil {
-		log.Println("taobaoCrmMemberinfoUpdatePrivy error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -128,7 +122,6 @@ func (ability *Ability680) TaobaoCrmMembersGroupBatchaddPrivy(req *request.Taoba
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.crm.members.group.batchadd.privy", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoCrmMembersGroupBatchaddPrivyResponse{}
 	if err != nil {
-		log.Println("taobaoCrmMembersGroupBatchaddPrivy error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -148,7 +141,6 @@ func (ability *Ability680) TaobaoOpencrmMemberSellerFetchstatus(req *request.Tao
 	var jsonStr, err = ability.Client.Execute("taobao.opencrm.member.seller.fetchstatus", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoOpencrmMemberSellerFetchstatusResponse{}
 	if err != nil {
-		log.Println("taobaoOpencrmMemberSellerFetchstatus error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

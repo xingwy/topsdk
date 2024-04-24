@@ -2,7 +2,6 @@ package ability213
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability213/request"
@@ -28,7 +27,6 @@ func (ability *Ability213) TmallItemCombineGet(req *request.TmallItemCombineGetR
 	var jsonStr, err = ability.Client.ExecuteWithSession("tmall.item.combine.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TmallItemCombineGetResponse{}
 	if err != nil {
-		log.Println("tmallItemCombineGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability213) AlibabaGpuAddSchemaGet(req *request.AlibabaGpuAddSche
 	var jsonStr, err = ability.Client.ExecuteWithSession("alibaba.gpu.add.schema.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.AlibabaGpuAddSchemaGetResponse{}
 	if err != nil {
-		log.Println("alibabaGpuAddSchemaGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -68,7 +65,6 @@ func (ability *Ability213) AlibabaGpuSchemaAdd(req *request.AlibabaGpuSchemaAddR
 	var jsonStr, err = ability.Client.ExecuteWithSession("alibaba.gpu.schema.add", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.AlibabaGpuSchemaAddResponse{}
 	if err != nil {
-		log.Println("alibabaGpuSchemaAdd error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -88,7 +84,6 @@ func (ability *Ability213) AlibabaGpuUpdateSchemaGet(req *request.AlibabaGpuUpda
 	var jsonStr, err = ability.Client.ExecuteWithSession("alibaba.gpu.update.schema.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.AlibabaGpuUpdateSchemaGetResponse{}
 	if err != nil {
-		log.Println("alibabaGpuUpdateSchemaGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -108,7 +103,6 @@ func (ability *Ability213) AlibabaGpuSchemaUpdate(req *request.AlibabaGpuSchemaU
 	var jsonStr, err = ability.Client.ExecuteWithSession("alibaba.gpu.schema.update", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.AlibabaGpuSchemaUpdateResponse{}
 	if err != nil {
-		log.Println("alibabaGpuSchemaUpdate error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -128,7 +122,6 @@ func (ability *Ability213) AlibabaGpuSchemaCatsearch(req *request.AlibabaGpuSche
 	var jsonStr, err = ability.Client.ExecuteWithSession("alibaba.gpu.schema.catsearch", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.AlibabaGpuSchemaCatsearchResponse{}
 	if err != nil {
-		log.Println("alibabaGpuSchemaCatsearch error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

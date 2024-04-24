@@ -2,7 +2,6 @@ package ability132
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability132/request"
@@ -28,7 +27,6 @@ func (ability *Ability132) TaobaoTmcAuthGet(req *request.TaobaoTmcAuthGetRequest
 	var jsonStr, err = ability.Client.Execute("taobao.tmc.auth.get", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoTmcAuthGetResponse{}
 	if err != nil {
-		log.Println("taobaoTmcAuthGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability132) TaobaoTmcTopicGroupDelete(req *request.TaobaoTmcTopic
 	var jsonStr, err = ability.Client.Execute("taobao.tmc.topic.group.delete", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoTmcTopicGroupDeleteResponse{}
 	if err != nil {
-		log.Println("taobaoTmcTopicGroupDelete error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -68,7 +65,6 @@ func (ability *Ability132) TaobaoTmcTopicGroupAdd(req *request.TaobaoTmcTopicGro
 	var jsonStr, err = ability.Client.Execute("taobao.tmc.topic.group.add", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoTmcTopicGroupAddResponse{}
 	if err != nil {
-		log.Println("taobaoTmcTopicGroupAdd error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -88,7 +84,6 @@ func (ability *Ability132) TaobaoTmcMessagesProduce(req *request.TaobaoTmcMessag
 	var jsonStr, err = ability.Client.Execute("taobao.tmc.messages.produce", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoTmcMessagesProduceResponse{}
 	if err != nil {
-		log.Println("taobaoTmcMessagesProduce error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -108,7 +103,6 @@ func (ability *Ability132) TaobaoTmcGroupsGet(req *request.TaobaoTmcGroupsGetReq
 	var jsonStr, err = ability.Client.Execute("taobao.tmc.groups.get", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoTmcGroupsGetResponse{}
 	if err != nil {
-		log.Println("taobaoTmcGroupsGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -128,7 +122,6 @@ func (ability *Ability132) TaobaoTmcGroupDelete(req *request.TaobaoTmcGroupDelet
 	var jsonStr, err = ability.Client.Execute("taobao.tmc.group.delete", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoTmcGroupDeleteResponse{}
 	if err != nil {
-		log.Println("taobaoTmcGroupDelete error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -148,7 +141,6 @@ func (ability *Ability132) TaobaoTmcGroupAdd(req *request.TaobaoTmcGroupAddReque
 	var jsonStr, err = ability.Client.Execute("taobao.tmc.group.add", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoTmcGroupAddResponse{}
 	if err != nil {
-		log.Println("taobaoTmcGroupAdd error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -168,7 +160,6 @@ func (ability *Ability132) TaobaoTmcMessagesConfirm(req *request.TaobaoTmcMessag
 	var jsonStr, err = ability.Client.Execute("taobao.tmc.messages.confirm", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoTmcMessagesConfirmResponse{}
 	if err != nil {
-		log.Println("taobaoTmcMessagesConfirm error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -188,7 +179,6 @@ func (ability *Ability132) TaobaoTmcMessagesConsume(req *request.TaobaoTmcMessag
 	var jsonStr, err = ability.Client.Execute("taobao.tmc.messages.consume", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoTmcMessagesConsumeResponse{}
 	if err != nil {
-		log.Println("taobaoTmcMessagesConsume error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

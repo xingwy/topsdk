@@ -2,7 +2,6 @@ package ability306
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability306/request"
@@ -28,7 +27,6 @@ func (ability *Ability306) TaobaoSubusersSubaccountSearch(req *request.TaobaoSub
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.subusers.subaccount.search", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoSubusersSubaccountSearchResponse{}
 	if err != nil {
-		log.Println("taobaoSubusersSubaccountSearch error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

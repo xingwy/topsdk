@@ -2,7 +2,6 @@ package ability314
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability314/request"
@@ -28,7 +27,6 @@ func (ability *Ability314) TaobaoJushitaJdpUsersGet(req *request.TaobaoJushitaJd
 	var jsonStr, err = ability.Client.Execute("taobao.jushita.jdp.users.get", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoJushitaJdpUsersGetResponse{}
 	if err != nil {
-		log.Println("taobaoJushitaJdpUsersGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability314) TaobaoJushitaJdpUserDelete(req *request.TaobaoJushita
 	var jsonStr, err = ability.Client.Execute("taobao.jushita.jdp.user.delete", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoJushitaJdpUserDeleteResponse{}
 	if err != nil {
-		log.Println("taobaoJushitaJdpUserDelete error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -68,7 +65,6 @@ func (ability *Ability314) TaobaoJushitaJdpUserAdd(req *request.TaobaoJushitaJdp
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.jushita.jdp.user.add", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoJushitaJdpUserAddResponse{}
 	if err != nil {
-		log.Println("taobaoJushitaJdpUserAdd error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

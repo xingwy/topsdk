@@ -2,7 +2,6 @@ package ability641
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability641/request"
@@ -28,7 +27,6 @@ func (ability *Ability641) TaobaoPromotionActivityGet(req *request.TaobaoPromoti
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.promotion.activity.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoPromotionActivityGetResponse{}
 	if err != nil {
-		log.Println("taobaoPromotionActivityGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability641) TaobaoPromotionCouponsGet(req *request.TaobaoPromotio
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.promotion.coupons.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoPromotionCouponsGetResponse{}
 	if err != nil {
-		log.Println("taobaoPromotionCouponsGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -68,7 +65,6 @@ func (ability *Ability641) TaobaoPromotionMealGet(req *request.TaobaoPromotionMe
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.promotion.meal.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoPromotionMealGetResponse{}
 	if err != nil {
-		log.Println("taobaoPromotionMealGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

@@ -2,7 +2,6 @@ package ability147
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability147/request"
@@ -28,7 +27,6 @@ func (ability *Ability147) TmallProductSchemaGet(req *request.TmallProductSchema
 	var jsonStr, err = ability.Client.ExecuteWithSession("tmall.product.schema.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TmallProductSchemaGetResponse{}
 	if err != nil {
-		log.Println("tmallProductSchemaGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability147) TmallItemHscodeAuditResultsQuery(req *request.TmallIt
 	var jsonStr, err = ability.Client.ExecuteWithSession("tmall.item.hscode.audit.results.query", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TmallItemHscodeAuditResultsQueryResponse{}
 	if err != nil {
-		log.Println("tmallItemHscodeAuditResultsQuery error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -68,7 +65,6 @@ func (ability *Ability147) TmallItemAddSimpleschemaGet(req *request.TmallItemAdd
 	var jsonStr, err = ability.Client.ExecuteWithSession("tmall.item.add.simpleschema.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TmallItemAddSimpleschemaGetResponse{}
 	if err != nil {
-		log.Println("tmallItemAddSimpleschemaGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -88,7 +84,6 @@ func (ability *Ability147) TmallProductUpdateSchemaGet(req *request.TmallProduct
 	var jsonStr, err = ability.Client.ExecuteWithSession("tmall.product.update.schema.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TmallProductUpdateSchemaGetResponse{}
 	if err != nil {
-		log.Println("tmallProductUpdateSchemaGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -108,7 +103,6 @@ func (ability *Ability147) TmallProductSchemaUpdate(req *request.TmallProductSch
 	var jsonStr, err = ability.Client.ExecuteWithSession("tmall.product.schema.update", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TmallProductSchemaUpdateResponse{}
 	if err != nil {
-		log.Println("tmallProductSchemaUpdate error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -128,7 +122,6 @@ func (ability *Ability147) TmallItemCalculateHscodeGet(req *request.TmallItemCal
 	var jsonStr, err = ability.Client.ExecuteWithSession("tmall.item.calculate.hscode.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TmallItemCalculateHscodeGetResponse{}
 	if err != nil {
-		log.Println("tmallItemCalculateHscodeGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -148,7 +141,6 @@ func (ability *Ability147) TmallItemHscodeDetailGet(req *request.TmallItemHscode
 	var jsonStr, err = ability.Client.ExecuteWithSession("tmall.item.hscode.detail.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TmallItemHscodeDetailGetResponse{}
 	if err != nil {
-		log.Println("tmallItemHscodeDetailGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

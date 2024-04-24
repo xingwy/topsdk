@@ -2,7 +2,6 @@ package ability315
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability315/request"
@@ -28,7 +27,6 @@ func (ability *Ability315) TaobaoRdsDbCreateaccount(req *request.TaobaoRdsDbCrea
 	var jsonStr, err = ability.Client.Execute("taobao.rds.db.createaccount", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoRdsDbCreateaccountResponse{}
 	if err != nil {
-		log.Println("taobaoRdsDbCreateaccount error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability315) TaobaoRdsDbGetdb(req *request.TaobaoRdsDbGetdbRequest
 	var jsonStr, err = ability.Client.Execute("taobao.rds.db.getdb", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoRdsDbGetdbResponse{}
 	if err != nil {
-		log.Println("taobaoRdsDbGetdb error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

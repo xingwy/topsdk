@@ -2,7 +2,6 @@ package ability305
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability305/request"
@@ -28,7 +27,6 @@ func (ability *Ability305) TaobaoTmcQueueGet(req *request.TaobaoTmcQueueGetReque
 	var jsonStr, err = ability.Client.Execute("taobao.tmc.queue.get", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoTmcQueueGetResponse{}
 	if err != nil {
-		log.Println("taobaoTmcQueueGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability305) TaobaoTmcUserTopicsGet(req *request.TaobaoTmcUserTopi
 	var jsonStr, err = ability.Client.Execute("taobao.tmc.user.topics.get", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoTmcUserTopicsGetResponse{}
 	if err != nil {
-		log.Println("taobaoTmcUserTopicsGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

@@ -2,7 +2,6 @@ package ability145
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability145/request"
@@ -28,7 +27,6 @@ func (ability *Ability145) TaobaoTradeSellermemosGet(req *request.TaobaoTradeSel
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.trade.sellermemos.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoTradeSellermemosGetResponse{}
 	if err != nil {
-		log.Println("taobaoTradeSellermemosGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability145) TaobaoTradeSellerflagsGet(req *request.TaobaoTradeSel
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.trade.sellerflags.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoTradeSellerflagsGetResponse{}
 	if err != nil {
-		log.Println("taobaoTradeSellerflagsGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)

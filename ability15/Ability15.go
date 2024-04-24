@@ -2,7 +2,6 @@ package ability15
 
 import (
 	"errors"
-	"log"
 
 	"github.com/xingwy/topsdk"
 	"github.com/xingwy/topsdk/ability15/request"
@@ -28,7 +27,6 @@ func (ability *Ability15) TaobaoWlbStoresBaseinfoGet(req *request.TaobaoWlbStore
 	var jsonStr, err = ability.Client.ExecuteWithSession("taobao.wlb.stores.baseinfo.get", req.ToMap(), req.ToFileMap(), session)
 	var respStruct = response.TaobaoWlbStoresBaseinfoGetResponse{}
 	if err != nil {
-		log.Println("taobaoWlbStoresBaseinfoGet error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
@@ -48,7 +46,6 @@ func (ability *Ability15) TaobaoLogisticsConsignOrderCreateandsend(req *request.
 	var jsonStr, err = ability.Client.Execute("taobao.logistics.consign.order.createandsend", req.ToMap(), req.ToFileMap())
 	var respStruct = response.TaobaoLogisticsConsignOrderCreateandsendResponse{}
 	if err != nil {
-		log.Println("taobaoLogisticsConsignOrderCreateandsend error", err)
 		return &respStruct, err
 	}
 	err = util.HandleJsonResponse(jsonStr, &respStruct)
